@@ -75,11 +75,11 @@
 
     cursor: pointer;
 
-    &:hover {
-      .s-icon {
-        stroke: $cta;
-      }
-    }
+    // &:hover {
+    //   .s-icon {
+    //     stroke: $cta;
+    //   }
+    // }
 
     .s-icon {
       stroke: $black;
@@ -91,6 +91,9 @@
 
     &--inc {
       top: 10px;
+      .s-icon {
+        stroke: $cta;
+      }
     }
 
     // .m-number__control--dec

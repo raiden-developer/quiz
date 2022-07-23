@@ -1,0 +1,74 @@
+.m-file {
+  position: relative;
+
+  width: 100%;
+  cursor: pointer;
+
+  // .m-file__field
+
+  &__field {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    pointer-events: none;
+
+    &:checked {
+      & + .m-file__box {
+      }
+
+      &:focus {
+      }
+    }
+
+    &:focus {
+      & + .m-file__box {
+        border-color: $cta;
+      }
+    }
+  }
+
+  // .m-file__box
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 48px;
+
+    color: $black;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 300;
+
+    background-color: $white;
+    border-radius: 10px;
+    border: 1px solid $black;
+    pointer-events: none;
+
+    transition: background-color 0.25s;
+  }
+
+  // .m-file__icon
+
+  &__icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 24px;
+    height: 27px;
+
+    vertical-align: middle;
+    margin-left: 0px;
+    pointer-events: none;
+
+    transition: width 0.2s, margin 0.2s;
+
+    fill: $cta;
+  }
+}

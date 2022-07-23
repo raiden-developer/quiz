@@ -16,7 +16,7 @@
         <div class="m-quiz">
           <div class="m-quiz__slider">
             <div class="m-quiz__pagination-count">
-              <b class="quiz__pagination-current">Вопрос 1</b>
+              <span class="m-quiz__pagination-current">Вопрос 1</span>
               из
               <span class="m-quiz__pagination-total">6</span>
             </div>
@@ -54,7 +54,8 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
-                        value="Деревянный"
+                        value="Кирпичный"
+                        checked
                       />
                       <span class="m-house-type__text">
                         Кирпичный
@@ -73,7 +74,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
-                        value="Деревянный"
+                        value="Блочный"
                       />
                       <span class="m-house-type__text">
                         Блочный
@@ -92,7 +93,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
-                        value="Деревянный"
+                        value="Блочный"
                       />
                       <span class="m-house-type__text">
                         Блочный
@@ -130,7 +131,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
-                        value="Деревянный"
+                        value="Кирпичный"
                       />
                       <span class="m-house-type__text">
                         Кирпичный
@@ -150,7 +151,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
-                        value="Деревянный"
+                        value="Блочный"
                       />
                       <span class="m-house-type__text">
                         Блочный
@@ -188,7 +189,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
-                        value="Деревянный"
+                        value="Кирпичный"
                       />
                       <span class="m-house-type__text">
                         Кирпичный
@@ -240,6 +241,7 @@
                             class="m-number__field"
                             type="number"
                             placeholder="12"
+                            name="Ширина"
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -268,6 +270,7 @@
                             class="m-number__field"
                             type="number"
                             placeholder="12"
+                            name="Высота этажа"
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -298,6 +301,7 @@
                             class="m-number__field"
                             type="number"
                             placeholder="12"
+                            name="Высота чердака (мансандры)"
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -371,6 +375,7 @@
                             class="m-number__field"
                             type="number"
                             placeholder="12"
+                            name="Ширина фундамента, м"
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -401,6 +406,7 @@
                             class="m-number__field"
                             type="number"
                             placeholder="12"
+                            name="Глубина фундамента, м"
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -428,7 +434,8 @@
                           <input
                             class="m-select__field"
                             type="text"
-                            placeholder="12"
+                            placeholder="Кирпичный"
+                            name="Материал фундамента"
                           />
                           <span class="m-select__arrow">
                             <svg class="s-icon">
@@ -458,7 +465,7 @@
                           <input
                             class="m-radio__field"
                             type="radio"
-                            name="Демонтируем фундамент?"
+                            name="Вывозим мусор?"
                             value="Да"
                           />
                           <span class="m-radio__box">
@@ -474,7 +481,7 @@
                           <input
                             class="m-radio__field"
                             type="radio"
-                            name="Демонтируем фундамент?"
+                            name="Вывозим мусор?"
                             value="Нет"
                           />
                           <span class="m-radio__box">
@@ -505,6 +512,7 @@
                             class="m-select__field"
                             type="text"
                             placeholder="Москва"
+                            name="Город"
                           />
                           <span class="m-select__arrow">
                             <svg class="s-icon">
@@ -522,6 +530,7 @@
                             class="m-number__field"
                             type="text"
                             placeholder="Арбат"
+                            name="Район"
                           />
                         </div>
                       </label>
@@ -532,6 +541,7 @@
                             class="m-number__field"
                             type="number"
                             placeholder="Новый Арбат"
+                            name="Улица"
                           />
                         </div>
                       </label>
@@ -542,25 +552,8 @@
                             class="m-number__field"
                             type="number"
                             placeholder="12, к 2"
+                            name="Строение"
                           />
-                          <span
-                            class="m-number__control m-number__control--inc"
-                          >
-                            <svg class="s-icon">
-                              <use
-                                xlink:href="img/svg/sprite1.svg#arrow-top"
-                              ></use>
-                            </svg>
-                          </span>
-                          <span
-                            class="m-number__control m-number__control--dec"
-                          >
-                            <svg class="s-icon">
-                              <use
-                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
-                              ></use>
-                            </svg>
-                          </span>
                         </div>
                       </label>
                     </div>
@@ -570,19 +563,129 @@
                     ></div>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">Slide 3</div>
+                <div class="m-quiz__slide swiper-slide">
+                  <h3 class="m-quiz__title">6.Прикрепите фото</h3>
+                  <div class="m-quiz__form">
+                    <div class="m-quiz__form-left">
+                      <label class="m-file">
+                        <input
+                          class="m-file__field"
+                          type="file"
+                          name="Фотографии"
+                          multiple="multiple"
+                          placeholder="Добавьте файлы"
+                        />
+                        <span class="m-file__box">
+                          <div class="m-file__text">Название файла</div>
+                          <svg class="m-file__icon s-icon">
+                            <use
+                              xlink:href="img/svg/sprite1.svg#attach-file"
+                            ></use>
+                          </svg>
+                        </span>
+                      </label>
+                      <div class="m-quiz__signature">
+                        Не более 10 фотографий, размером не более 5 МБ
+                      </div>
+                    </div>
+                    <div
+                      class="m-quiz__form-image"
+                      style="background-image: url(img/quiz/slide6.jpg)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="m-quiz__slide swiper-slide">
+                  <h3 class="m-quiz__title">Готово!</h3>
+                  <h4 class="m-quiz__final-title">
+                    Для получения расчета, введите телефон,
+                  </h4>
+                  <div class="m-quiz__final">
+                    <p class="m-quiz__final-text">
+                      На который вы хотите получить информацию о стоимости
+                      Вашего демонтажа.
+                    </p>
+                    <p class="m-quiz__final-suptitle">
+                      Куда вам удобнее получить смету?
+                    </p>
+                    <ul class="m-quiz__social">
+                      <li class="m-quiz__socia-item">
+                        <button
+                          class="m-quiz__social-btn"
+                          data-connection="whatsapp"
+                        >
+                          <svg class="s-icon">
+                            <use
+                              xlink:href="img/svg/sprite1.svg#social-whatsapp"
+                            ></use>
+                          </svg>
+                          <span>Whatsapp</span>
+                        </button>
+                      </li>
+                      <li class="m-quiz__socia-item">
+                        <button
+                          class="m-quiz__social-btn"
+                          data-connection="telegram"
+                        >
+                          <svg class="s-icon">
+                            <use
+                              xlink:href="img/svg/sprite1.svg#social-telegram"
+                            ></use>
+                          </svg>
+                          <span>Telegram</span>
+                        </button>
+                      </li>
+                      <li class="m-quiz__socia-item">
+                        <button
+                          class="m-quiz__social-btn active"
+                          data-connection="phone"
+                        >
+                          <svg class="s-icon">
+                            <use
+                              xlink:href="img/svg/sprite1.svg#social-phone"
+                            ></use>
+                          </svg>
+                          <span>Позвоните мне</span>
+                        </button>
+                      </li>
+                    </ul>
+                    <label class="m-quiz__final-number m-number">
+                      <span class="m-number__text visually-hidden"
+                        >Ваш номер телефона</span
+                      >
+                      <div class="m-number__wrapper">
+                        <input
+                          class="m-number__field js-phone-mask"
+                          type="text"
+                          placeholder="Ваш номер телефона"
+                          name="Номер телефона"
+                        />
+                      </div>
+                    </label>
+                    <button class="m-quiz__final-btn" type="submit">
+                      Получить расчет
+                    </button>
+                    <div
+                      class="m-quiz__final-image"
+                      style="background-image: url(img/quiz/slide-fnal.png)"
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <button class="m-quiz__btn m-quiz__btn--prev">Prev</button>
-            <button class="m-quiz__btn m-quiz__btn--next">Next</button>
+            <div class="m-quiz__navigation">
+              <button class="m-quiz__btn m-quiz__btn--prev">Назад</button>
+              <button class="m-quiz__btn m-quiz__btn--next">Далее</button>
+            </div>
           </div>
 
           <div class="m-quiz__info">
-            <div class="m-quiz__questions-progress"><b>Вопрос 1</b> из 6</div>
+            <div class="m-quiz__questions-progress">
+              <span>Вопрос 1</span> из 6
+            </div>
             <p class="m-quiz__info-text">Ваша персональная скидка за ответы:</p>
             <div class="m-quiz__discount">
-              <b>350</b>
+              <span class="m-quiz__discount-number">350</span>
               <span>рублей</span>
             </div>
             <div
