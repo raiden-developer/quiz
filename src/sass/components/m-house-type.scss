@@ -1,0 +1,79 @@
+.m-house-type {
+  min-height: 157px;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  cursor: pointer;
+
+  // .m-house-type__field
+
+  &__field {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    pointer-events: none;
+
+    &:checked {
+      & + .m-house-type__text {
+        background-color: $cta;
+
+        .m-house-type__icon {
+          width: 21px;
+          margin-left: 15px;
+        }
+      }
+
+      &:focus {
+        & + .m-house-type__text {
+        }
+      }
+    }
+
+    &:focus {
+      & + .m-house-type__text {
+      }
+    }
+  }
+
+  // .m-house-type__text
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 6px 5px;
+
+    color: #000;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 400;
+
+    background-color: $white;
+    border-radius: 10px;
+    pointer-events: none;
+
+    transition: background-color 0.25s;
+  }
+
+  // .m-house-type__icon
+
+  &__icon {
+    width: 0;
+    height: 21px;
+
+    vertical-align: middle;
+    margin-left: 0px;
+    pointer-events: none;
+
+    transition: width 0.2s, margin 0.2s;
+  }
+}

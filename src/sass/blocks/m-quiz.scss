@@ -1,0 +1,268 @@
+.m-quiz {
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: relative;
+
+    height: 15px;
+    margin-bottom: 30px;
+
+    background: none;
+    border-radius: 5px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 0;
+
+      width: 100%;
+      height: 5px;
+
+      background-color: #bbb;
+    }
+  }
+
+  .swiper-scrollbar-drag {
+    position: relative;
+    z-index: 1;
+
+    height: 15px;
+
+    border-radius: 15px;
+    background-color: $cta;
+  }
+
+  .swiper {
+    background-color: $white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+  }
+
+  .simplebar-track.simplebar-vertical {
+    top: 25px;
+    bottom: 25px;
+    right: 7px;
+
+    width: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 3px;
+      background: #bbb;
+      border-radius: 5px;
+    }
+  }
+
+  .simplebar-scrollbar::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 10px;
+    margin: -2px 0;
+
+    background-color: $cta;
+    opacity: 1;
+  }
+}
+
+.m-quiz {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  *,
+  &::after,
+  &::before {
+    box-sizing: inherit;
+  }
+
+  // .m-quiz__slider
+
+  &__slider {
+    width: 100%;
+    max-width: calc(100% - 382px - 34px);
+  }
+
+  // .m-quiz__slide
+
+  &__slide {
+    height: 450px;
+    padding: 25px 0;
+
+    &[data-simplebar] {
+      overflow-x: hidden;
+    }
+  }
+
+  // .m-quiz__title
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  // .m-quiz__types
+
+  &__types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 25px;
+  }
+
+  // .m-quiz__house-type
+
+  &__house-type {
+    max-width: 236px;
+    width: 100%;
+    margin-bottom: 23px;
+  }
+
+  // .m-quiz__info
+
+  &__info {
+    position: relative;
+
+    max-width: 382px;
+    width: 100%;
+    padding: 67px 45px 169px;
+
+    text-align: center;
+
+    background: #ffffff;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+  }
+
+  // .m-quiz__questions-progress
+
+  &__questions-progress {
+    color: $black;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    b {
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  // .m-quiz__info-text
+
+  &__info-text {
+    margin: 30px 0;
+
+    font-size: 22px;
+  }
+
+  // .m-quiz__discount
+
+  &__discount {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.2;
+    font-weight: 700;
+    font-size: 150px;
+
+    b {
+      color: $black;
+      font-size: 150px;
+      font-weight: inherit;
+    }
+
+    span {
+      color: $cta;
+      font-size: 40px;
+    }
+  }
+
+  // .m-quiz__discount-image
+
+  &__discount-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 164px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  // .m-quiz__form
+
+  &__form {
+    display: flex;
+    padding: 0 30px 0 35px;
+  }
+
+  // .m-quiz__form-left
+
+  &__form-left {
+    margin-right: 30px;
+    flex-basis: 300px;
+
+    // .m-quiz__form-left--centered
+
+    &--centered {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // .m-quiz__form-image
+
+  &__form-image {
+    width: 402px;
+    min-height: 342px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+  }
+
+  // .m-quiz__row
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    .m-radio {
+      width: calc(50% - 7px);
+    }
+
+    &--column {
+      flex-direction: column;
+      width: 100%;
+
+      .m-radio {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}

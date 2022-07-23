@@ -1,4 +1,6 @@
-@include font-face('Arial', 'Arial', 400, normal);
-@include font-face('Arial', 'Arial-Italic', 300, italic);
-@include font-face('Georgia', 'Georgia', 400, normal);
-@include font-face('Georgia', 'Georgia-Bold', 700, normal);
+@include font-face('Stolzl', 'stolzl_light', 300, normal);
+@include font-face('Stolzl', 'stolzl_book', 350, normal);
+@include font-face('Stolzl', 'stolzl_regular', 400, normal);
+@include font-face('Stolzl', 'stolzl_medium', 500, normal);
+@include font-face('Stolzl', 'stolzl_bold', 700, normal);
+// @include font-face('Stolzl', 'Georgia-Bold', 700, normal);

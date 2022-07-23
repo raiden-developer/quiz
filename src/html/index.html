@@ -11,9 +11,588 @@
     <link rel="stylesheet" href="css/main.min.css" />
   </head>
   <body>
-    <div class="main">
-      <div class="m-quiz"></div>
-    </div>
+    <main class="main">
+      <div class="container">
+        <div class="m-quiz">
+          <div class="m-quiz__slider">
+            <div class="m-quiz__pagination-count">
+              <b class="quiz__pagination-current">Вопрос 1</b>
+              из
+              <span class="m-quiz__pagination-total">6</span>
+            </div>
+            <div class="swiper-scrollbar"></div>
+
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
+                  <h3 class="m-quiz__title">1. Какой у вас тип дома?</h3>
+                  <div class="m-quiz__types">
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/1.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Деревянный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/2.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Кирпичный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/3.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Блочный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/4.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Блочный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/5.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Деревянный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/6.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Кирпичный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/4.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Блочный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/5.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Деревянный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                    <label
+                      class="m-house-type m-quiz__house-type"
+                      style="background-image: url(img/quiz/home-types/6.jpg)"
+                    >
+                      <input
+                        class="m-house-type__field"
+                        type="radio"
+                        name="Тип дома"
+                        value="Деревянный"
+                      />
+                      <span class="m-house-type__text">
+                        Кирпичный
+                        <svg class="m-house-type__icon s-icon">
+                          <use
+                            xlink:href="img/svg/sprite1.svg#circle-checked"
+                          ></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="m-quiz__slide swiper-slide">
+                  <h3 class="m-quiz__title">2.Размеры дома, М</h3>
+                  <div class="m-quiz__form">
+                    <div class="m-quiz__form-left">
+                      <label class="m-number">
+                        <span class="m-number__text">Длина</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text">Ширина</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text">Высота этажа</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text"
+                          >Высота чердака (мансандры)</span
+                        >
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="m-quiz__form-image"
+                      style="background-image: url(img/quiz/slide2.jpg)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="m-quiz__slide swiper-slide">
+                  <h3 class="m-quiz__title">3.Демонтируем фундамент?</h3>
+                  <div class="m-quiz__form">
+                    <div class="m-quiz__form-left">
+                      <div class="m-quiz__row">
+                        <label class="m-radio">
+                          <input
+                            class="m-radio__field"
+                            type="radio"
+                            name="Демонтируем фундамент?"
+                            value="Да"
+                          />
+                          <span class="m-radio__box">
+                            Да
+                            <svg class="m-radio__icon s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#circle-checked"
+                              ></use>
+                            </svg>
+                          </span>
+                        </label>
+                        <label class="m-radio">
+                          <input
+                            class="m-radio__field"
+                            type="radio"
+                            name="Демонтируем фундамент?"
+                            value="Нет"
+                          />
+                          <span class="m-radio__box">
+                            Нет
+                            <svg class="m-radio__icon s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#circle-checked"
+                              ></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                      <label class="m-number">
+                        <span class="m-number__text">Ширина фундамента, м</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text"
+                          >Глубина фундамента, м</span
+                        >
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                      <label class="m-select">
+                        <span class="m-select__text">Материал фундамента</span>
+                        <div class="m-select__wrapper">
+                          <input
+                            class="m-select__field"
+                            type="text"
+                            placeholder="12"
+                          />
+                          <span class="m-select__arrow">
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="m-quiz__form-image"
+                      style="background-image: url(img/quiz/slide3.jpg)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="m-quiz__slide swiper-slide">
+                  <h3 class="m-quiz__title">4.Вывозим мусор?</h3>
+                  <div class="m-quiz__form">
+                    <div
+                      class="m-quiz__form-left m-quiz__form-left--centered"
+                      style="display: flex; align-items: center"
+                    >
+                      <div class="m-quiz__row m-quiz__row--column">
+                        <label class="m-radio">
+                          <input
+                            class="m-radio__field"
+                            type="radio"
+                            name="Демонтируем фундамент?"
+                            value="Да"
+                          />
+                          <span class="m-radio__box">
+                            Да
+                            <svg class="m-radio__icon s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#circle-checked"
+                              ></use>
+                            </svg>
+                          </span>
+                        </label>
+                        <label class="m-radio">
+                          <input
+                            class="m-radio__field"
+                            type="radio"
+                            name="Демонтируем фундамент?"
+                            value="Нет"
+                          />
+                          <span class="m-radio__box">
+                            Нет
+                            <svg class="m-radio__icon s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#circle-checked"
+                              ></use>
+                            </svg>
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+                    <div
+                      class="m-quiz__form-image"
+                      style="background-image: url(img/quiz/slide4.jpg)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="m-quiz__slide swiper-slide">
+                  <h3 class="m-quiz__title">5.Местоположение объекта?</h3>
+                  <div class="m-quiz__form">
+                    <div class="m-quiz__form-left">
+                      <label class="m-select">
+                        <span class="m-select__text">Город</span>
+                        <div class="m-select__wrapper">
+                          <input
+                            class="m-select__field"
+                            type="text"
+                            placeholder="Москва"
+                          />
+                          <span class="m-select__arrow">
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text">Район</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="text"
+                            placeholder="Арбат"
+                          />
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text">Улица</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="Новый Арбат"
+                          />
+                        </div>
+                      </label>
+                      <label class="m-number">
+                        <span class="m-number__text">Строение</span>
+                        <div class="m-number__wrapper">
+                          <input
+                            class="m-number__field"
+                            type="number"
+                            placeholder="12, к 2"
+                          />
+                          <span
+                            class="m-number__control m-number__control--inc"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-top"
+                              ></use>
+                            </svg>
+                          </span>
+                          <span
+                            class="m-number__control m-number__control--dec"
+                          >
+                            <svg class="s-icon">
+                              <use
+                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
+                              ></use>
+                            </svg>
+                          </span>
+                        </div>
+                      </label>
+                    </div>
+                    <div
+                      class="m-quiz__form-image"
+                      style="background-image: url(img/quiz/slide5.jpg)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="m-quiz__slide swiper-slide">Slide 3</div>
+              </div>
+            </div>
+
+            <button class="m-quiz__btn m-quiz__btn--prev">Prev</button>
+            <button class="m-quiz__btn m-quiz__btn--next">Next</button>
+          </div>
+
+          <div class="m-quiz__info">
+            <div class="m-quiz__questions-progress"><b>Вопрос 1</b> из 6</div>
+            <p class="m-quiz__info-text">Ваша персональная скидка за ответы:</p>
+            <div class="m-quiz__discount">
+              <b>350</b>
+              <span>рублей</span>
+            </div>
+            <div
+              class="m-quiz__discount-image"
+              style="background-image: url(img/quiz/discount-image.png)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="js/main.js"></script>
   </body>
