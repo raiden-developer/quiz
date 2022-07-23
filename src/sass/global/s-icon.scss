@@ -1,0 +1,18 @@
+.s-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  max-height: 100%;
+  max-width: 100%;
+
+  &--xs {
+    width: 14px;
+    height: 14px;
+  }
+
+  &--lg {
+    width: 52px;
+    height: 52px;
+  }
+}
