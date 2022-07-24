@@ -425,6 +425,23 @@
     &--centered {
       display: flex;
       align-items: center;
+
+      @media (max-width: $sm) {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+
+    // .m-quiz__form-left--column
+
+    &--column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @media (max-width: $sm) {
+        align-items: center;
+      }
     }
   }
 
@@ -469,9 +486,16 @@
       width: calc(50% - 7px);
     }
 
+    // .m-quiz__row--column
+
     &--column {
       flex-direction: column;
       width: 100%;
+
+      @media (max-width: $sm) {
+        align-items: center;
+        justify-content: flex-start;
+      }
 
       .m-radio {
         width: 100%;

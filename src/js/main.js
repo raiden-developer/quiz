@@ -159,3 +159,55 @@ function numberControls(selector) {
 }
 
 numberControls('.js-number-input')
+
+function fileInputs(selector) {
+  const fileInputs = document.querySelectorAll(selector)
+
+  fileInputs.forEach((input) => {
+    const field = input.querySelector('input[type=file]')
+    const text = input.querySelector('.m-file__text')
+
+    field.addEventListener('change', (e) => {
+      const files = e.currentTarget.files
+      const keys = Object.keys(files)
+      const fileNames = []
+
+      keys.forEach((key) => {
+        fileNames.push(files[key].name)
+      })
+
+      text.innerHTML = fileNames.join(' , ')
+    })
+  })
+}
+
+fileInputs('.m-file')
+
+function submitHandler(e) {
+  e.preventDefault()
+
+  var request = new XMLHttpRequest()
+
+  request.onreadystatechange = function () {
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+    }
+  }
+
+  request.open(this.method, this.action, true)
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+  var data = new FormData(this)
+  console.log(data)
+  var dataPost
+  // Формируем массив данных для отправки
+  data.forEach(function (value, key) {
+    dataPost += '&' + key + '=' + value
+  })
+
+  console.log(dataPost)
+
+  request.send(dataPost)
+}
+
+const form = document.querySelector('.m-quiz__slider')
+form.addEventListener('submit', submitHandler)
