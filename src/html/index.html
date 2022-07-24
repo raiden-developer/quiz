@@ -14,7 +14,7 @@
     <main class="main">
       <div class="container">
         <div class="m-quiz">
-          <form action="handler.php" class="m-quiz__slider">
+          <form action="handler.php" method="post" class="m-quiz__slider">
             <div class="m-quiz__pagination-count js-slides-progress">
               <span class="m-quiz__pagination-current js-current"
                 >Вопрос 1</span
@@ -226,6 +226,7 @@
                             type="number"
                             placeholder="12"
                             name="Длина"
+                            required
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -679,6 +680,11 @@
                     <button class="m-quiz__final-btn" type="submit">
                       Получить расчет
                     </button>
+                    <div class="m-quiz__final-discount">
+                      Ваша персональная скидка за ответы:
+                      <span class="js-discount"></span>
+                      рублей
+                    </div>
                     <div
                       class="m-quiz__final-image"
                       style="background-image: url(img/quiz/slide-fnal.png)"
@@ -706,7 +712,7 @@
             </div>
             <p class="m-quiz__info-text">Ваша персональная скидка за ответы:</p>
             <div class="m-quiz__discount">
-              <span class="m-quiz__discount-number">350</span>
+              <span class="m-quiz__discount-number js-discount">250</span>
               <span>рублей</span>
             </div>
             <div

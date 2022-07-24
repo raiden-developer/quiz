@@ -64,6 +64,14 @@ swiper.on('slideChange', () => {
   checkQuizValidation(inputs)
 })
 
+function updateDiscount(selector, num) {
+  let elements = document.querySelectorAll(selector)
+
+  elements.forEach((el) => {
+    el.innerHTML = num
+  })
+}
+
 function watchSlidesProgress(selector) {
   const items = document.querySelectorAll(selector)
   const prevBtn = document.querySelector('.m-quiz__btn--prev')
@@ -72,6 +80,7 @@ function watchSlidesProgress(selector) {
   items.forEach((el) => {
     const current = el.querySelector('.js-current')
     const total = el.querySelector('.js-total')
+    let discount = 250
 
     current.innerHTML = `Вопрос ${swiper.activeIndex + 1}`
     total.innerHTML = swiper.slides.length - 1
@@ -81,8 +90,11 @@ function watchSlidesProgress(selector) {
         el.innerHTML = 'Готово'
         prevBtn.classList.add('hide')
         nextBtn.classList.add('hide')
+        updateDiscount('.js-discount', discount)
       } else {
+        discount = (swiper.activeIndex + 1) * 250
         current.innerHTML = `Вопрос ${swiper.activeIndex + 1}`
+        updateDiscount('.js-discount', discount)
       }
     })
   })
@@ -183,6 +195,7 @@ function fileInputs(selector) {
 
 fileInputs('.m-file')
 
+// Мой скрипт для отправки формы по AJAX можно удалить на боевом проекте
 function submitHandler(e) {
   e.preventDefault()
 
@@ -197,14 +210,12 @@ function submitHandler(e) {
   request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
   var data = new FormData(this)
-  console.log(data)
+
   var dataPost
   // Формируем массив данных для отправки
   data.forEach(function (value, key) {
     dataPost += '&' + key + '=' + value
   })
-
-  console.log(dataPost)
 
   request.send(dataPost)
 }

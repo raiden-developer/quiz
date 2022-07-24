@@ -114,6 +114,8 @@
   justify-content: space-between;
   box-sizing: border-box;
 
+  font-family: $main-font;
+
   *,
   &::after,
   &::before {
@@ -197,6 +199,7 @@
     width: 100%;
     padding: 13px 25px;
 
+    font-family: inherit;
     color: #000;
     font-weight: 500;
     font-size: 18px;
@@ -207,6 +210,7 @@
     border: none;
     border-radius: 20px;
     outline: transparent;
+    @include c-pointer;
 
     transition: background-color 0.25s;
 
@@ -272,6 +276,7 @@
   // .m-quiz__title
 
   &__title {
+    margin-top: 0;
     margin-bottom: 25px;
     padding: 0 15px;
 
@@ -372,6 +377,7 @@
   &__discount {
     display: flex;
     flex-direction: column;
+    margin: 0 -35px;
 
     color: $cta;
     font-size: 40px;
@@ -539,6 +545,7 @@
   // .m-quiz__final-title
 
   &__final-title {
+    margin-top: 0;
     margin-bottom: 10px;
     padding-left: 43px;
 
@@ -566,7 +573,7 @@
     font-weight: 400;
     max-width: 465px;
 
-    @media (max-width: $sm) {
+    @media (max-width: $md) {
       order: 1;
       margin: 10px 0;
 
@@ -592,6 +599,10 @@
   // .m-quiz__social
 
   &__social {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
     display: flex;
     margin-bottom: 25px;
 
@@ -641,6 +652,7 @@
     padding: 6px;
     width: 100%;
 
+    font-family: inherit;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.2;
@@ -649,7 +661,7 @@
     border: 1px solid $black;
     background-color: transparent;
     outline: transparent;
-
+    @include c-pointer;
     transition: background-color 0.2s;
 
     @media (max-width: $xs) {
@@ -691,6 +703,7 @@
     padding: 13px 25px;
     margin-top: 10px;
 
+    font-family: inherit;
     color: #000;
     font-size: 18px;
     font-weight: 500;
@@ -700,6 +713,7 @@
     border: none;
     box-shadow: 0px 2px 0px #000000;
     border-radius: 20px;
+    @include c-pointer;
 
     transition: background-color 0.25s;
 
@@ -718,6 +732,22 @@
 
     &:active {
       background-color: darken($cta, 10%);
+    }
+  }
+
+  // .m-quiz__final-discount
+
+  &__final-discount {
+    display: none;
+
+    @media (max-width: $lg) {
+      display: block;
+      margin-top: 15px;
+      order: 5;
+    }
+
+    span {
+      font-weight: 700;
     }
   }
 
