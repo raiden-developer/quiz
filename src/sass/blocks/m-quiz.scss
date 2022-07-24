@@ -262,6 +262,11 @@
     opacity: 0;
 
     transition: opacity 0.4s;
+
+    @media (max-width: $xs) {
+      min-width: 300px;
+      left: auto;
+    }
   }
 
   // .m-quiz__title
