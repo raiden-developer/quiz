@@ -1,4 +1,4 @@
-import Swiper, {Scrollbar, Navigation, EffectFade} from 'swiper'
+import Swiper, {Navigation, EffectFade, Pagination} from 'swiper'
 import 'simplebar'
 
 Swiper.use([EffectFade])
@@ -9,19 +9,85 @@ const swiper = new Swiper('.swiper', {
   speed: 250,
   effect: 'fade',
   initialSlide: 0,
+  allowTouchMove: false,
+  noSwiping: true,
+  autoHeight: true,
   fadeEffect: {
     crossFade: true
   },
-
-  modules: [Scrollbar, Navigation],
-  scrollbar: {
-    el: '.swiper-scrollbar'
+  on: {
+    init: (swiper) => {}
   },
+  modules: [Navigation, Pagination],
   navigation: {
     nextEl: '.m-quiz__btn--next',
     prevEl: '.m-quiz__btn--prev'
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'progressbar'
   }
 })
+
+function checkQuizValidation(inputs) {
+  const nextBtn = document.querySelector('.m-quiz__btn--next')
+  let allowMove = false
+
+  const isInputsValid = (inputs) => {
+    allowMove = true
+    inputs.forEach((input) => {
+      if (input.value === '') {
+        allowMove = false
+      }
+    })
+
+    if (allowMove) {
+      nextBtn.disabled = false
+    } else [(nextBtn.disabled = true)]
+  }
+
+  isInputsValid(inputs)
+
+  inputs.forEach((input) => {
+    input.addEventListener('input', () => {
+      isInputsValid(inputs)
+    })
+  })
+}
+
+swiper.on('slideChange', () => {
+  let activeSlide = swiper.slides[swiper.activeIndex]
+  let inputsNum = activeSlide.querySelectorAll('input[required][type=number]')
+  let inputsText = activeSlide.querySelectorAll('input[required][type=text]')
+  let inputs = [...inputsNum, ...inputsText]
+
+  checkQuizValidation(inputs)
+})
+
+function watchSlidesProgress(selector) {
+  const items = document.querySelectorAll(selector)
+  const prevBtn = document.querySelector('.m-quiz__btn--prev')
+  const nextBtn = document.querySelector('.m-quiz__btn--next')
+
+  items.forEach((el) => {
+    const current = el.querySelector('.js-current')
+    const total = el.querySelector('.js-total')
+
+    current.innerHTML = `Вопрос ${swiper.activeIndex + 1}`
+    total.innerHTML = swiper.slides.length - 1
+
+    swiper.on('slideChange', () => {
+      if (swiper.activeIndex + 1 === swiper.slides.length) {
+        el.innerHTML = 'Готово'
+        prevBtn.classList.add('hide')
+        nextBtn.classList.add('hide')
+      } else {
+        current.innerHTML = `Вопрос ${swiper.activeIndex + 1}`
+      }
+    })
+  })
+}
+watchSlidesProgress('.js-slides-progress')
 
 const connectionTypes = [
   {
@@ -68,3 +134,28 @@ selectConnectionType(
   '.m-quiz__social-btn',
   '.m-quiz__final-number input'
 )
+
+function numberControls(selector) {
+  let numbers = document.querySelectorAll(selector)
+
+  function inputValidation(number) {
+    if (number <= 0) return 1
+    return number
+  }
+
+  numbers.forEach((el) => {
+    const increase = el.querySelector('.m-number__control--inc')
+    const decrease = el.querySelector('.m-number__control--dec')
+    const input = el.querySelector('.m-number__field')
+
+    increase.addEventListener('click', () => {
+      input.value = inputValidation(+input.value + 1)
+    })
+
+    decrease.addEventListener('click', () => {
+      input.value = inputValidation(+input.value - 1)
+    })
+  })
+}
+
+numberControls('.js-number-input')

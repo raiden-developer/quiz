@@ -14,12 +14,15 @@
     <main class="main">
       <div class="container">
         <div class="m-quiz">
-          <div class="m-quiz__slider">
-            <div class="m-quiz__pagination-count">
-              <span class="m-quiz__pagination-current">Вопрос 1</span>
+          <form action="handler.php" class="m-quiz__slider">
+            <div class="m-quiz__pagination-count js-slides-progress">
+              <span class="m-quiz__pagination-current js-current"
+                >Вопрос 1</span
+              >
               из
-              <span class="m-quiz__pagination-total">6</span>
+              <span class="m-quiz__pagination-total js-total">6</span>
             </div>
+            <div class="swiper-pagination"></div>
             <div class="swiper-scrollbar"></div>
 
             <div class="swiper">
@@ -36,6 +39,7 @@
                         type="radio"
                         name="Тип дома"
                         value="Деревянный"
+                        required
                       />
                       <span class="m-house-type__text">
                         Деревянный
@@ -54,6 +58,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Кирпичный"
                         checked
                       />
@@ -74,6 +79,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Блочный"
                       />
                       <span class="m-house-type__text">
@@ -93,6 +99,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Блочный"
                       />
                       <span class="m-house-type__text">
@@ -112,6 +119,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Деревянный"
                       />
                       <span class="m-house-type__text">
@@ -131,6 +139,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Кирпичный"
                       />
                       <span class="m-house-type__text">
@@ -151,6 +160,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Блочный"
                       />
                       <span class="m-house-type__text">
@@ -170,6 +180,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Деревянный"
                       />
                       <span class="m-house-type__text">
@@ -189,6 +200,7 @@
                         class="m-house-type__field"
                         type="radio"
                         name="Тип дома"
+                        required
                         value="Кирпичный"
                       />
                       <span class="m-house-type__text">
@@ -206,13 +218,14 @@
                   <h3 class="m-quiz__title">2.Размеры дома, М</h3>
                   <div class="m-quiz__form">
                     <div class="m-quiz__form-left">
-                      <label class="m-number">
+                      <label class="m-number js-number-input">
                         <span class="m-number__text">Длина</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="number"
                             placeholder="12"
+                            name="Длина"
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -232,16 +245,17 @@
                               ></use>
                             </svg>
                           </span>
-                        </div>
+                        </span>
                       </label>
-                      <label class="m-number">
+                      <label class="m-number js-number-input">
                         <span class="m-number__text">Ширина</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="number"
                             placeholder="12"
                             name="Ширина"
+                            required
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -261,16 +275,17 @@
                               ></use>
                             </svg>
                           </span>
-                        </div>
+                        </span>
                       </label>
-                      <label class="m-number">
+                      <label class="m-number js-number-input">
                         <span class="m-number__text">Высота этажа</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="number"
                             placeholder="12"
                             name="Высота этажа"
+                            required
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -290,18 +305,19 @@
                               ></use>
                             </svg>
                           </span>
-                        </div>
+                        </span>
                       </label>
-                      <label class="m-number">
+                      <label class="m-number js-number-input">
                         <span class="m-number__text"
                           >Высота чердака (мансандры)</span
                         >
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="number"
                             placeholder="12"
                             name="Высота чердака (мансандры)"
+                            required
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -321,7 +337,7 @@
                               ></use>
                             </svg>
                           </span>
-                        </div>
+                        </span>
                       </label>
                     </div>
                     <div
@@ -341,6 +357,8 @@
                             type="radio"
                             name="Демонтируем фундамент?"
                             value="Да"
+                            checked
+                            required
                           />
                           <span class="m-radio__box">
                             Да
@@ -357,6 +375,7 @@
                             type="radio"
                             name="Демонтируем фундамент?"
                             value="Нет"
+                            required
                           />
                           <span class="m-radio__box">
                             Нет
@@ -368,9 +387,9 @@
                           </span>
                         </label>
                       </div>
-                      <label class="m-number">
+                      <label class="m-number js-number-input">
                         <span class="m-number__text">Ширина фундамента, м</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="number"
@@ -395,13 +414,13 @@
                               ></use>
                             </svg>
                           </span>
-                        </div>
+                        </span>
                       </label>
-                      <label class="m-number">
+                      <label class="m-number js-number-input">
                         <span class="m-number__text"
                           >Глубина фундамента, м</span
                         >
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="number"
@@ -426,25 +445,18 @@
                               ></use>
                             </svg>
                           </span>
-                        </div>
+                        </span>
                       </label>
-                      <label class="m-select">
-                        <span class="m-select__text">Материал фундамента</span>
-                        <div class="m-select__wrapper">
+                      <label class="m-number">
+                        <span class="m-number__text">Материал фундамента</span>
+                        <span class="m-number__wrapper">
                           <input
-                            class="m-select__field"
+                            class="m-number__field"
                             type="text"
                             placeholder="Кирпичный"
                             name="Материал фундамента"
                           />
-                          <span class="m-select__arrow">
-                            <svg class="s-icon">
-                              <use
-                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
-                              ></use>
-                            </svg>
-                          </span>
-                        </div>
+                        </span>
                       </label>
                     </div>
                     <div
@@ -467,6 +479,8 @@
                             type="radio"
                             name="Вывозим мусор?"
                             value="Да"
+                            checked
+                            required
                           />
                           <span class="m-radio__box">
                             Да
@@ -483,6 +497,7 @@
                             type="radio"
                             name="Вывозим мусор?"
                             value="Нет"
+                            required
                           />
                           <span class="m-radio__box">
                             Нет
@@ -505,56 +520,53 @@
                   <h3 class="m-quiz__title">5.Местоположение объекта?</h3>
                   <div class="m-quiz__form">
                     <div class="m-quiz__form-left">
-                      <label class="m-select">
-                        <span class="m-select__text">Город</span>
-                        <div class="m-select__wrapper">
+                      <label class="m-number">
+                        <span class="m-number__text">Город</span>
+                        <span class="m-number__wrapper">
                           <input
-                            class="m-select__field"
+                            class="m-number__field"
                             type="text"
                             placeholder="Москва"
                             name="Город"
+                            required
                           />
-                          <span class="m-select__arrow">
-                            <svg class="s-icon">
-                              <use
-                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
-                              ></use>
-                            </svg>
-                          </span>
-                        </div>
+                        </span>
                       </label>
                       <label class="m-number">
                         <span class="m-number__text">Район</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
                             type="text"
                             placeholder="Арбат"
                             name="Район"
+                            required
                           />
-                        </div>
+                        </span>
                       </label>
                       <label class="m-number">
                         <span class="m-number__text">Улица</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
-                            type="number"
+                            type="text"
                             placeholder="Новый Арбат"
                             name="Улица"
+                            required
                           />
-                        </div>
+                        </span>
                       </label>
                       <label class="m-number">
                         <span class="m-number__text">Строение</span>
-                        <div class="m-number__wrapper">
+                        <span class="m-number__wrapper">
                           <input
                             class="m-number__field"
-                            type="number"
+                            type="text"
                             placeholder="12, к 2"
                             name="Строение"
+                            required
                           />
-                        </div>
+                        </span>
                       </label>
                     </div>
                     <div
@@ -573,10 +585,9 @@
                           type="file"
                           name="Фотографии"
                           multiple="multiple"
-                          placeholder="Добавьте файлы"
                         />
                         <span class="m-file__box">
-                          <div class="m-file__text">Название файла</div>
+                          <span class="m-file__text">Название файла</span>
                           <svg class="m-file__icon s-icon">
                             <use
                               xlink:href="img/svg/sprite1.svg#attach-file"
@@ -612,6 +623,7 @@
                         <button
                           class="m-quiz__social-btn"
                           data-connection="whatsapp"
+                          type="button"
                         >
                           <svg class="s-icon">
                             <use
@@ -625,6 +637,7 @@
                         <button
                           class="m-quiz__social-btn"
                           data-connection="telegram"
+                          type="button"
                         >
                           <svg class="s-icon">
                             <use
@@ -638,6 +651,7 @@
                         <button
                           class="m-quiz__social-btn active"
                           data-connection="phone"
+                          type="button"
                         >
                           <svg class="s-icon">
                             <use
@@ -652,14 +666,15 @@
                       <span class="m-number__text visually-hidden"
                         >Ваш номер телефона</span
                       >
-                      <div class="m-number__wrapper">
+                      <span class="m-number__wrapper">
                         <input
                           class="m-number__field js-phone-mask"
                           type="text"
                           placeholder="Ваш номер телефона"
                           name="Номер телефона"
+                          required
                         />
-                      </div>
+                      </span>
                     </label>
                     <button class="m-quiz__final-btn" type="submit">
                       Получить расчет
@@ -675,13 +690,19 @@
 
             <div class="m-quiz__navigation">
               <button class="m-quiz__btn m-quiz__btn--prev">Назад</button>
-              <button class="m-quiz__btn m-quiz__btn--next">Далее</button>
+              <button class="m-quiz__btn m-quiz__btn--next">
+                Далее
+                <span class="m-quiz__btn-prompt">
+                  Необходимо заполнить обязательные поля
+                </span>
+              </button>
             </div>
-          </div>
+          </form>
 
           <div class="m-quiz__info">
-            <div class="m-quiz__questions-progress">
-              <span>Вопрос 1</span> из 6
+            <div class="m-quiz__questions-progress js-slides-progress">
+              <span class="js-current">Вопрос 1</span> из
+              <span class="js-total"></span>
             </div>
             <p class="m-quiz__info-text">Ваша персональная скидка за ответы:</p>
             <div class="m-quiz__discount">
