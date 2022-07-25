@@ -4,7 +4,7 @@
 @import 'global/mixins.scss';
 @import 'global/fonts.scss';
 @import 'global/s-icon.scss';
-@import 'global/global.scss';
+// @import 'global/global.scss';
 
 // @import 'components/popup.scss';
 
@@ -19,10 +19,20 @@
 
 @import 'blocks/m-quiz.scss';
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
   max-width: 1234px;
   padding: 10px;
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main {
+  box-sizing: border-box;
 }
 
 .visually-hidden {

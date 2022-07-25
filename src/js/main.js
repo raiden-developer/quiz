@@ -1,7 +1,25 @@
-import Swiper, {Navigation, EffectFade, Pagination} from 'swiper'
+import Swiper, {Navigation, EffectFade} from 'swiper'
 import 'simplebar'
 
 Swiper.use([EffectFade])
+
+const progressbar = document.querySelector('.m-quiz__scrollbar-fill')
+let activeSlide
+let inputsNum
+let inputsText
+let inputs
+
+function getActiveInputs(slider) {
+  activeSlide = slider.slides[slider.activeIndex]
+  inputsNum = activeSlide.querySelectorAll('input[required][type=number]')
+  inputsText = activeSlide.querySelectorAll('input[required][type=text]')
+  inputs = [...inputsNum, ...inputsText]
+}
+
+function progressbarUpdate(slider) {
+  progressbar.style.width =
+    ((slider.activeIndex + 1) / slider.slides.length) * 100 + '%'
+}
 
 const swiper = new Swiper('.swiper', {
   threshold: 10,
@@ -16,36 +34,36 @@ const swiper = new Swiper('.swiper', {
     crossFade: true
   },
   on: {
-    init: (swiper) => {}
+    init: (swiper) => {
+      getActiveInputs(swiper)
+      progressbarUpdate(swiper)
+    }
   },
-  modules: [Navigation, Pagination],
+  modules: [Navigation],
   navigation: {
     nextEl: '.m-quiz__btn--next',
     prevEl: '.m-quiz__btn--prev'
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    type: 'progressbar'
   }
 })
 
-function checkQuizValidation(inputs) {
+const isInputsValid = () => {
   const nextBtn = document.querySelector('.m-quiz__btn--next')
-  let allowMove = false
+  let allowMove = true
 
-  const isInputsValid = (inputs) => {
-    allowMove = true
-    inputs.forEach((input) => {
-      if (input.value === '') {
-        allowMove = false
-      }
-    })
+  inputs.forEach((input) => {
+    if (input.value === '') {
+      allowMove = false
+    }
+  })
 
-    if (allowMove) {
-      nextBtn.disabled = false
-    } else [(nextBtn.disabled = true)]
+  if (allowMove) {
+    nextBtn.disabled = false
+  } else {
+    nextBtn.disabled = true
   }
+}
 
+function checkQuizValidation(inputs) {
   isInputsValid(inputs)
 
   inputs.forEach((input) => {
@@ -56,12 +74,9 @@ function checkQuizValidation(inputs) {
 }
 
 swiper.on('slideChange', () => {
-  let activeSlide = swiper.slides[swiper.activeIndex]
-  let inputsNum = activeSlide.querySelectorAll('input[required][type=number]')
-  let inputsText = activeSlide.querySelectorAll('input[required][type=text]')
-  let inputs = [...inputsNum, ...inputsText]
-
+  getActiveInputs(swiper)
   checkQuizValidation(inputs)
+  progressbarUpdate(swiper)
 })
 
 function updateDiscount(selector, num) {
@@ -99,6 +114,7 @@ function watchSlidesProgress(selector) {
     })
   })
 }
+
 watchSlidesProgress('.js-slides-progress')
 
 const connectionTypes = [
@@ -133,8 +149,10 @@ function selectConnectionType(connectionTypes, selector, targetSelector) {
 
     el.addEventListener('click', () => {
       if (lastElement) lastElement.classList.remove('active')
+      target.value = ''
       target.name = currentConnection.nameAttr
       target.placeholder = currentConnection.text
+      target.focus()
       el.classList.add('active')
       lastElement = el
     })
@@ -162,6 +180,7 @@ function numberControls(selector) {
 
     increase.addEventListener('click', () => {
       input.value = inputValidation(+input.value + 1)
+      isInputsValid()
     })
 
     decrease.addEventListener('click', () => {

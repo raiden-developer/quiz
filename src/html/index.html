@@ -22,8 +22,9 @@
               из
               <span class="m-quiz__pagination-total js-total">6</span>
             </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-scrollbar"></div>
+            <div class="m-quiz__scrollbar">
+              <span class="m-quiz__scrollbar-fill"></span>
+            </div>
 
             <div class="swiper">
               <div class="swiper-wrapper">
@@ -214,7 +215,7 @@
                     </label>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
                   <h3 class="m-quiz__title">2.Размеры дома, М</h3>
                   <div class="m-quiz__form">
                     <div class="m-quiz__form-left">
@@ -347,7 +348,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
                   <h3 class="m-quiz__title">3.Демонтируем фундамент?</h3>
                   <div class="m-quiz__form">
                     <div class="m-quiz__form-left">
@@ -396,6 +397,7 @@
                             type="number"
                             placeholder="12"
                             name="Ширина фундамента, м"
+                            required
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -427,6 +429,7 @@
                             type="number"
                             placeholder="12"
                             name="Глубина фундамента, м"
+                            required
                           />
                           <span
                             class="m-number__control m-number__control--inc"
@@ -456,6 +459,7 @@
                             type="text"
                             placeholder="Кирпичный"
                             name="Материал фундамента"
+                            required
                           />
                         </span>
                       </label>
@@ -466,7 +470,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
                   <h3 class="m-quiz__title">4.Вывозим мусор?</h3>
                   <div class="m-quiz__form">
                     <div
@@ -517,7 +521,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
                   <h3 class="m-quiz__title">5.Местоположение объекта?</h3>
                   <div class="m-quiz__form">
                     <div class="m-quiz__form-left">
@@ -576,7 +580,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
                   <h3 class="m-quiz__title">6.Прикрепите фото</h3>
                   <div class="m-quiz__form">
                     <div class="m-quiz__form-left m-quiz__form-left--column">
@@ -606,7 +610,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="m-quiz__slide swiper-slide">
+                <div class="m-quiz__slide swiper-slide" data-simplebar>
                   <h3 class="m-quiz__title">Готово!</h3>
                   <h4 class="m-quiz__final-title">
                     Для получения расчета, введите телефон,
@@ -696,12 +700,10 @@
 
             <div class="m-quiz__navigation">
               <button class="m-quiz__btn m-quiz__btn--prev">Назад</button>
-              <button class="m-quiz__btn m-quiz__btn--next">
-                Далее
-                <span class="m-quiz__btn-prompt">
-                  Необходимо заполнить обязательные поля
-                </span>
-              </button>
+              <button class="m-quiz__btn m-quiz__btn--next">Далее</button>
+              <span class="m-quiz__btn-prompt">
+                Необходимо заполнить обязательные поля
+              </span>
             </div>
           </form>
 
