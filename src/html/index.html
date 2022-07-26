@@ -389,6 +389,49 @@
                           </span>
                         </label>
                       </div>
+                      <div class="m-dropdown__wrapper">
+                        <div class="m-dropdown__suptitle">
+                          Материал фундамента
+                        </div>
+                        <div class="m-dropdown">
+                          <button class="m-dropdown__button" type="button">
+                            Кирпичный
+                          </button>
+                          <ul class="m-dropdown__list" data-simplebar>
+                            <li
+                              class="m-dropdown__list-item"
+                              data-value="Кирпичный"
+                            >
+                              Кирпичный
+                            </li>
+                            <li
+                              class="m-dropdown__list-item"
+                              data-value="Деревянный"
+                            >
+                              Деревянный
+                            </li>
+                            <li
+                              class="m-dropdown__list-item"
+                              data-value="Бетонный"
+                            >
+                              Бетонный
+                            </li>
+                            <li
+                              class="m-dropdown__list-item"
+                              data-value="Ещё какой-то"
+                            >
+                              Ещё какой-то
+                            </li>
+                          </ul>
+                          <input
+                            type="text"
+                            name="Материал фундамента"
+                            value="Кирпичный"
+                            class="m-dropdown__input-hidden"
+                            required
+                          />
+                        </div>
+                      </div>
                       <label class="m-number js-number-input">
                         <span class="m-number__text">Ширина фундамента, м</span>
                         <span class="m-number__wrapper">
@@ -417,50 +460,6 @@
                               ></use>
                             </svg>
                           </span>
-                        </span>
-                      </label>
-                      <label class="m-number js-number-input">
-                        <span class="m-number__text"
-                          >Глубина фундамента, м</span
-                        >
-                        <span class="m-number__wrapper">
-                          <input
-                            class="m-number__field"
-                            type="number"
-                            placeholder="12"
-                            name="Глубина фундамента, м"
-                            required
-                          />
-                          <span
-                            class="m-number__control m-number__control--inc"
-                          >
-                            <svg class="s-icon">
-                              <use
-                                xlink:href="img/svg/sprite1.svg#arrow-top"
-                              ></use>
-                            </svg>
-                          </span>
-                          <span
-                            class="m-number__control m-number__control--dec"
-                          >
-                            <svg class="s-icon">
-                              <use
-                                xlink:href="img/svg/sprite1.svg#arrow-bottom"
-                              ></use>
-                            </svg>
-                          </span>
-                        </span>
-                      </label>
-                      <label class="m-number">
-                        <span class="m-number__text">Материал фундамента</span>
-                        <span class="m-number__wrapper">
-                          <input
-                            class="m-number__field"
-                            type="text"
-                            placeholder="Кирпичный"
-                            name="Материал фундамента"
-                            required
-                          />
                         </span>
                       </label>
                     </div>
@@ -545,30 +544,6 @@
                             type="text"
                             placeholder="Арбат"
                             name="Район"
-                            required
-                          />
-                        </span>
-                      </label>
-                      <label class="m-number">
-                        <span class="m-number__text">Улица</span>
-                        <span class="m-number__wrapper">
-                          <input
-                            class="m-number__field"
-                            type="text"
-                            placeholder="Новый Арбат"
-                            name="Улица"
-                            required
-                          />
-                        </span>
-                      </label>
-                      <label class="m-number">
-                        <span class="m-number__text">Строение</span>
-                        <span class="m-number__wrapper">
-                          <input
-                            class="m-number__field"
-                            type="text"
-                            placeholder="12, к 2"
-                            name="Строение"
                             required
                           />
                         </span>

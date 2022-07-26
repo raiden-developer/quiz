@@ -1,0 +1,156 @@
+/* *******************
+Select c dropdown на JS
+******************* */
+
+.m-dropdown .m-dropdown__list {
+  .simplebar-track.simplebar-vertical {
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 3px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 3px;
+      background: #bbb;
+      border-radius: 5px;
+    }
+  }
+
+  .simplebar-scrollbar::before {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 10px;
+
+    background-color: $cta;
+    opacity: 1;
+  }
+}
+
+.m-dropdown {
+  position: relative;
+}
+
+.m-dropdown__wrapper {
+  margin-bottom: 15px;
+
+  @media (max-width: $xs) {
+    margin-bottom: 10px;
+  }
+}
+
+.m-dropdown__suptitle {
+  display: block;
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 5px;
+}
+
+.m-dropdown__button {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 40px 0 15px;
+
+  color: $black;
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: left;
+
+  background-color: transparent;
+  border: 1px solid $black;
+  border-radius: 10px;
+  outline: transparent;
+  cursor: pointer;
+
+  transition: border-color 0.2s;
+}
+
+.m-dropdown__button:focus,
+.m-dropdown__button--active {
+  outline: transparent;
+  border-color: $cta;
+}
+
+.m-dropdown__button::after {
+  content: url(../img/arrow-down.svg);
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+
+  width: 17px;
+  height: 12px;
+
+  pointer-events: none;
+}
+
+.m-dropdown__list {
+  display: none;
+
+  position: absolute;
+  left: 0;
+  top: 48px;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(176, 198, 225, 0.6);
+  overflow-x: hidden;
+
+  max-height: 150px;
+
+  border-radius: 6px;
+  width: 100%;
+
+  z-index: 3;
+
+  @media (max-width: $sm) {
+    max-height: 90px;
+  }
+}
+
+.m-dropdown__list--visible {
+  display: block;
+}
+
+.m-dropdown__list-item {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #7e9bbd;
+  border-bottom: 0px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.m-dropdown__list-item:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.m-dropdown__list-item:last-child {
+  border-radius: 0 0 6px 6px;
+  border-bottom: 1px solid #7e9bbd;
+}
+
+.m-dropdown__list-item:hover {
+  background: rgba(176, 198, 225, 0.26);
+}
+
+.m-dropdown__input-hidden {
+  display: none;
+}

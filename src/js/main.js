@@ -1,6 +1,5 @@
 import Swiper, {Navigation, EffectFade} from 'swiper'
 import 'simplebar'
-
 Swiper.use([EffectFade])
 
 const progressbar = document.querySelector('.m-quiz__scrollbar-fill')
@@ -8,6 +7,8 @@ let activeSlide
 let inputsNum
 let inputsText
 let inputs
+
+const nextBtn = document.querySelector('.m-quiz__btn--next')
 
 function getActiveInputs(slider) {
   activeSlide = slider.slides[slider.activeIndex]
@@ -30,6 +31,7 @@ const swiper = new Swiper('.swiper', {
   allowTouchMove: false,
   noSwiping: true,
   autoHeight: true,
+  observer: true,
   fadeEffect: {
     crossFade: true
   },
@@ -37,6 +39,12 @@ const swiper = new Swiper('.swiper', {
     init: (swiper) => {
       getActiveInputs(swiper)
       progressbarUpdate(swiper)
+    },
+    resize: (swiper) => {
+      // swiper.updateAutoHeight(1000)
+    },
+    observerUpdate() {
+      // swiper.updateAutoHeight(1000)
     }
   },
   modules: [Navigation],
@@ -46,8 +54,27 @@ const swiper = new Swiper('.swiper', {
   }
 })
 
+window.addEventListener('resize', resizeThrottler, false)
+
+var resizeTimeout
+function resizeThrottler() {
+  // ignore resize events as long as an actualResizeHandler execution is in the queue
+  if (!resizeTimeout) {
+    resizeTimeout = setTimeout(function () {
+      resizeTimeout = null
+      actualResizeHandler()
+
+      // The actualResizeHandler will execute at a rate of 15fps
+    }, 66)
+  }
+}
+
+function actualResizeHandler() {
+  console.log('resize')
+  swiper.updateAutoHeight(1000)
+}
+
 const isInputsValid = () => {
-  const nextBtn = document.querySelector('.m-quiz__btn--next')
   let allowMove = true
 
   inputs.forEach((input) => {
@@ -64,12 +91,10 @@ const isInputsValid = () => {
 }
 
 function checkQuizValidation(inputs) {
-  isInputsValid(inputs)
+  isInputsValid()
 
   inputs.forEach((input) => {
-    input.addEventListener('input', () => {
-      isInputsValid(inputs)
-    })
+    input.addEventListener('input', isInputsValid)
   })
 }
 
@@ -77,6 +102,12 @@ swiper.on('slideChange', () => {
   getActiveInputs(swiper)
   checkQuizValidation(inputs)
   progressbarUpdate(swiper)
+})
+
+swiper.on('beforeSlideChangeStart', () => {
+  inputs.forEach((input) => {
+    input.removeEventListener('input', isInputsValid)
+  })
 })
 
 function updateDiscount(selector, num) {
@@ -236,8 +267,69 @@ function submitHandler(e) {
     dataPost += '&' + key + '=' + value
   })
 
+  console.log(dataPost)
   request.send(dataPost)
 }
 
 const form = document.querySelector('.m-quiz__slider')
 form.addEventListener('submit', submitHandler)
+
+function customSelect() {
+  // Полифилл для метода forEach для NodeList
+  if (window.NodeList && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = function (callback, thisArg) {
+      thisArg = thisArg || window
+      for (var i = 0; i < this.length; i++) {
+        callback.call(thisArg, this[i], i, this)
+      }
+    }
+  }
+
+  document.querySelectorAll('.m-dropdown').forEach(function (dropDownWrapper) {
+    const dropDownBtn = dropDownWrapper.querySelector('.m-dropdown__button')
+    const dropDownList = dropDownWrapper.querySelector('.m-dropdown__list')
+    const dropDownListItems = dropDownList.querySelectorAll(
+      '.m-dropdown__list-item'
+    )
+    const dropDownInput = dropDownWrapper.querySelector(
+      '.m-dropdown__input-hidden'
+    )
+
+    // Клик по кнопке. Открыть/Закрыть select
+    dropDownBtn.addEventListener('click', function (e) {
+      dropDownList.classList.toggle('m-dropdown__list--visible')
+      this.classList.add('m-dropdown__button--active')
+
+      console.log(dropDownInput.value)
+    })
+
+    // Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
+    dropDownListItems.forEach(function (listItem) {
+      listItem.addEventListener('click', function (e) {
+        e.stopPropagation()
+        dropDownBtn.innerText = this.innerText
+        dropDownBtn.focus()
+        dropDownInput.value = this.dataset.value
+        dropDownList.classList.remove('m-dropdown__list--visible')
+      })
+    })
+
+    // Клик снаружи дропдауна. Закрыть дропдаун
+    document.addEventListener('click', function (e) {
+      if (e.target !== dropDownBtn) {
+        dropDownBtn.classList.remove('m-dropdown__button--active')
+        dropDownList.classList.remove('m-dropdown__list--visible')
+      }
+    })
+
+    // Нажатие на Tab или Escape. Закрыть дропдаун
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Tab' || e.key === 'Escape') {
+        dropDownBtn.classList.remove('m-dropdown__button--active')
+        dropDownList.classList.remove('m-dropdown__list--visible')
+      }
+    })
+  })
+}
+
+customSelect()

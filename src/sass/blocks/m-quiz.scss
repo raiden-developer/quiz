@@ -6,6 +6,10 @@
     margin-bottom: 30px;
   }
 
+  .swiper-container {
+    max-height: 100%;
+  }
+
   .simplebar-track.simplebar-vertical {
     top: 25px;
     bottom: 25px;
@@ -216,6 +220,10 @@
 
     &--prev {
       margin-right: 30px;
+
+      @media (max-width: $xs) {
+        margin-right: 15px;
+      }
     }
 
     // .m-quiz__btn--next
@@ -303,7 +311,7 @@
     margin-bottom: 25px;
 
     @media (max-width: $lg) {
-      max-width: 300px;
+      max-width: 32%;
     }
 
     @media (max-width: $md) {
@@ -311,12 +319,14 @@
     }
 
     @media (max-width: $sm) {
-      max-width: calc(50% - 3vw);
-      min-height: 167px;
+      margin-bottom: 2vw;
+      max-width: calc(50% - 1vw);
+      min-height: 29vw;
     }
 
     @media (max-width: $xs) {
       max-width: 320px;
+      min-height: 167px;
     }
   }
 
@@ -340,6 +350,7 @@
       flex-direction: column;
       padding: 30px 10px 169px;
       max-width: 280px;
+      margin-top: 82px;
     }
 
     @media (max-width: $md) {
@@ -399,6 +410,7 @@
 
     @media (max-width: $lg) {
       font-size: 90px;
+      line-height: 1;
     }
   }
 
@@ -440,6 +452,10 @@
   &__form-left {
     margin-right: 30px;
     flex-basis: 300px;
+
+    @media (max-width: $lg) {
+      flex-grow: 1;
+    }
 
     @media (max-width: $sm) {
       margin-right: 0;
@@ -483,6 +499,11 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 15px;
+
+    @media (max-width: $lg) {
+      max-width: 50%;
+      width: 100%;
+    }
 
     @media (max-width: $sm) {
       width: 100%;
@@ -558,6 +579,7 @@
 
     @media (max-width: $lg) {
       padding: 0 15px;
+      max-width: 485px;
     }
 
     @media (max-width: $sm) {

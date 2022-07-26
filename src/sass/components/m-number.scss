@@ -36,6 +36,7 @@
 
   &__wrapper {
     position: relative;
+    display: block;
   }
 
   // .m-number__field
@@ -73,12 +74,17 @@
 
   &__control {
     position: absolute;
+    z-index: 1;
     right: 15px;
 
     width: 17px;
     height: 12px;
 
     cursor: pointer;
+
+    @media (max-width: $xs) {
+      display: none;
+    }
 
     // &:hover {
     //   .s-icon {
