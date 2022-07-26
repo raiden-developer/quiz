@@ -298,7 +298,7 @@ function customSelect() {
     // Клик по кнопке. Открыть/Закрыть select
     dropDownBtn.addEventListener('click', function (e) {
       dropDownList.classList.toggle('m-dropdown__list--visible')
-      this.classList.add('m-dropdown__button--active')
+      this.classList.toggle('m-dropdown__button--active')
 
       console.log(dropDownInput.value)
     })
@@ -311,6 +311,7 @@ function customSelect() {
         dropDownBtn.focus()
         dropDownInput.value = this.dataset.value
         dropDownList.classList.remove('m-dropdown__list--visible')
+        dropDownBtn.classList.remove('m-dropdown__button--active')
       })
     })
 

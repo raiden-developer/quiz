@@ -84,6 +84,11 @@ Select c dropdown на JS
   border-color: $cta;
 }
 
+.m-dropdown__button--active {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
 .m-dropdown__button::after {
   content: url(../img/arrow-down.svg);
   position: absolute;
@@ -114,7 +119,9 @@ Select c dropdown на JS
 
   max-height: 150px;
 
-  border-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+
   width: 100%;
 
   z-index: 3;
@@ -132,19 +139,22 @@ Select c dropdown на JS
   font-size: 14px;
   margin: 0;
   padding: 0;
-  border: 1px solid #7e9bbd;
+  border: 1px solid $black;
+  border-left: 1px solid $cta;
+  border-right: 1px solid $cta;
   border-bottom: 0px;
   padding: 8px 15px;
   cursor: pointer;
 }
 
 .m-dropdown__list-item:first-child {
-  border-radius: 6px 6px 0 0;
+  // border-radius: 0 0 0;
+  border-top: none;
 }
 
 .m-dropdown__list-item:last-child {
   border-radius: 0 0 6px 6px;
-  border-bottom: 1px solid #7e9bbd;
+  border-bottom: 1px solid $cta;
 }
 
 .m-dropdown__list-item:hover {
